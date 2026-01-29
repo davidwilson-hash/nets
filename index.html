@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rectangular Pyramid Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Prisms &amp; Pyramids Lab</p>
+        <h1>Explore a Rectangular Pyramid</h1>
+        <p class="subtitle">
+          Drag the slider to unfold the pyramid into its net, then click each face to
+          inspect its shape and role.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Unfold controls">
+        <label class="control">
+          <span>Unfold amount</span>
+          <input id="unfoldRange" type="range" min="0" max="100" value="20" />
+        </label>
+        <button id="resetBtn" type="button">Reset view</button>
+      </section>
+
+      <section class="stage">
+        <svg
+          id="pyramidCanvas"
+          viewBox="0 0 640 420"
+          role="img"
+          aria-labelledby="pyramidTitle pyramidDesc"
+        >
+          <title id="pyramidTitle">Rectangular pyramid net explorer</title>
+          <desc id="pyramidDesc">
+            A base rectangle with four triangular faces that unfold outward. Click a face to
+            highlight it.
+          </desc>
+          <rect id="base" class="face base" rx="6" ry="6" />
+          <polygon id="face-north" class="face side" />
+          <polygon id="face-east" class="face side" />
+          <polygon id="face-south" class="face side" />
+          <polygon id="face-west" class="face side" />
+
+          <text id="label-base" class="label">Base</text>
+          <text id="label-north" class="label">North face</text>
+          <text id="label-east" class="label">East face</text>
+          <text id="label-south" class="label">South face</text>
+          <text id="label-west" class="label">West face</text>
+        </svg>
+      </section>
+
+      <aside class="inspector" aria-live="polite">
+        <h2 id="inspectorTitle">Face details</h2>
+        <p id="inspectorBody">
+          Click a face to learn more about its shape and how it connects to the base.
+        </p>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
